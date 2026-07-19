@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Feed - CandySocial</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* 🔍 INSTA-STYLE SEARCH UTILITY STYLING */
+        .search-wrapper {
+            position: relative;
+            margin: 0 20px;
+            flex: 1;
+            max-width: 400px;
+        }
+        .search-input {
+            width: 100%;
+            padding: 8px 16px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            outline: none;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+        .search-input:focus {
+            border-color: #8e44ad;
+            box-shadow: 0 0 5px rgba(142, 68, 173, 0.2);
+        }
+        .search-dropdown {
+            position: absolute;
+            top: 42px;
+            left: 0;
+            width: 100%;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            max-height: 300px;
+            overflow-y: auto;
+            display: none;
+            z-index: 1000;
+            border: 1px solid #eee;
+        }
+        .search-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 15px;
+            border-bottom: 1px solid #f9f9f9;
+            transition: 0.2s;
+        }
+        .search-item:hover {
+            background: #fcf8ff;
+        }
+        .search-user-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .search-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid #8e44ad;
+        }
+        .search-username {
+            font-weight: 600;
+            color: #333;
+            font-size: 0.9rem;
+        }
+        .btn-follow-toggle {
+            padding: 5px 12px;
+            border-radius: 15px;
+            border: none;
+            font-size: 0.8rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .btn-follow {
+            background: #8e44ad;
+            color: white;
+        }
+        .btn-follow:hover {
+            background: #732d91;
+        }
+        .btn-unfollow {
+            background: #e0e0e0;
+            color: #333;
+        }
+        .btn-unfollow:hover {
+            background: #d5d5d5;
+        }
+        .no-result-text {
+            padding: 15px;
+            text-align: center;
+            color: #888;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo-text" onclick="window.location.href='feed.html'" style="cursor: pointer;">🍬 Candy<span>Social</span></h1>
+            <div class="search-wrapper">
+                <input type="text" id="user-search-input" class="search-input" placeholder="🔍 Search sweet friends by username..." autocomplete="off">
+                <div id="search-results-dropdown" class="search-dropdown"></div>
+            </div>
+            <div class="nav-links">
+                <a href="feed.html" class="nav-item active">🏠 Home</a>
+                <a href="chat.html" class="nav-item">💬 Messages</a>
+                <a href="profile.html" class="nav-item" id="nav-profile-link">👤 Profile</a>
+                <button id="logout-btn" class="btn-logout">🚪 Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="feed-layout">
+        <div class="feed-container">
+            <div class="card create-post-card">
+                <h3>Share something sweet! ✨</h3>
+                <form id="create-post-form">
+                    <textarea id="post-content" class="form-input textarea-input" placeholder="What's on your mind?"></textarea>
+                    <div class="form-actions-row" style="margin-top: 12px; display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap;">
+                        <div class="media-upload-wrapper">
+                            <label for="post-media" style="cursor: pointer; font-size: 0.9rem; color: var(--primary-teal); font-weight: 600;">
+                                📸 Add Photos / Videos 
+                            </label>
+                            <input type="file" id="post-media" accept="image/*,video/*" multiple style="display: block; font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn-primary">Post It</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div id="posts-container">
+                <div class="loading-text">Loading fresh posts... 🍬</div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/feed.js"></script>
+</body>
+</html>

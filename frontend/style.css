@@ -1,0 +1,596 @@
+/* =========================================================================
+   ◈ CANDY MINT PASTEL THEME CONFIGURATION
+   ========================================================================= */
+:root {
+    --bg-main: #F0F8F5;          /* Ultra-Light Mint Background */
+    --bg-card: #FFFFFF;          /* Pure White for Posts & Forms */
+    --primary-teal: #00ADB5;     /* Bright Teal for Buttons & Main Actions */
+    --primary-hover: #008092;    /* Darker Teal for Button Hovers */
+    --accent-purple: #B19FFB;    /* Soft Lilac/Lavender for Likes & Highlights */
+    --text-main: #231A25;        /* Deep Navy Blue for Clear Reading */
+    --text-muted: #627289;       /* Soft Grey-Blue for Timestamps & Secondary */
+    --border-color: #E2EFEA;     /* Soft Minty Border */
+    --shadow-soft: 0 8px 24px rgba(0, 173, 181, 0.06); /* Dreamy soft shadow */
+}
+
+/* =========================================================================
+   ◈ Global Reset
+   ========================================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* =========================================================================
+   ◈ Common Button Styles
+   ========================================================================= */
+.btn-primary {
+    background-color: var(--primary-teal);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 173, 181, 0.2);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+/* =========================================================================
+   ◈ Card Styling (Forms, Posts, Chats)
+   ========================================================================= */
+.card {
+    background-color: var(--bg-card);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid var(--border-color);
+}
+
+/* =========================================================================
+   ◈ Input Fields
+   ========================================================================= */
+.form-input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 16px;
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    background-color: #FAFDFD;
+    color: var(--text-main);
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+    border-color: var(--accent-purple);
+}
+
+/* =========================================================================
+   ◈ Auth Layout Extra Styles
+   ========================================================================= */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding: 20px;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+}
+
+.auth-header {
+    margin-bottom: 24px;
+}
+
+.logo-text {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--primary-teal);
+    margin-bottom: 8px;
+}
+
+.logo-text span {
+    color: var(--accent-purple);
+}
+
+.auth-btn {
+    width: 100%;
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+.toggle-text {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.toggle-text span {
+    color: var(--primary-teal);
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* =========================================================================
+   ◈ Helper Classes
+   ========================================================================= */
+.hidden {
+    display: none !important;
+}
+
+.alert {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.alert-error {
+    background-color: #FFE5E5;
+    color: #CC0000;
+    border: 1px solid #FFA3A3;
+}
+
+.alert-success {
+    background-color: #E5FFE5;
+    color: #008000;
+    border: 1px solid #A3FFA3;
+}
+
+/* =========================================================================
+   ◈ NAVBAR & FEED STYLES
+   ========================================================================= */
+.navbar {
+    background-color: var(--bg-card);
+    border-bottom: 2px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 10px 20px;
+}
+
+.nav-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-item:hover, .nav-item.active {
+    color: var(--primary-teal);
+}
+
+.btn-logout {
+    background: none;
+    border: 1px solid #FF8A8A;
+    color: #FF5C5C;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-logout:hover {
+    background-color: #FFF5F5;
+}
+
+/* =========================================================================
+   ◈ Feed Main Content
+   ========================================================================= */
+.feed-layout {
+    max-width: 600px;
+    width: 100%;
+    margin: 30px auto;
+    padding: 0 15px;
+}
+
+.create-post-card {
+    margin-bottom: 24px;
+    padding: 20px;
+}
+
+.create-post-card h3 {
+    margin-bottom: 12px;
+    color: var(--text-main);
+    font-size: 1.1rem;
+}
+
+.textarea-input {
+    resize: none;
+    height: 90px;
+    margin-bottom: 10px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* =========================================================================
+   ◈ Dynamic Post Card Design
+   ========================================================================= */
+.post-card {
+    background: var(--bg-card);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-soft);
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.post-user {
+    font-weight: 700;
+    color: var(--primary-teal);
+    cursor: pointer;
+}
+
+.post-time {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.post-content {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--text-main);
+    margin-bottom: 16px;
+}
+
+.post-footer {
+    display: flex;
+    gap: 15px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 12px;
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.2s ease;
+}
+
+.action-btn.liked {
+    color: var(--accent-purple);
+}
+
+.action-btn:hover {
+    color: var(--primary-teal);
+}
+
+.loading-text {
+    text-align: center;
+    color: var(--text-muted);
+    margin-top: 40px;
+    font-weight: 600;
+}
+
+/* =========================================================================
+   ◈ PROFILE PAGE STYLES (FIXED PICTURE CIRCLE DESIGN)
+   ========================================================================= */
+.profile-layout {
+    max-width: 600px;
+    width: 100%;
+    margin: 30px auto;
+    padding: 0 15px;
+}
+
+.profile-header-card {
+    text-align: center;
+    padding: 30px 20px;
+    margin-bottom: 30px;
+}
+
+/* ✨ FIX: Image constraints to center & fit within circle perfectly */
+.avatar-large {
+    width: 130px;               /* Profile picture size logically uniform */
+    height: 130px;
+    border-radius: 50%;         /* Circle standard mask */
+    margin: 0 auto 15px auto;
+    border: 3px solid var(--primary-teal);
+    box-shadow: var(--shadow-soft);
+    object-fit: cover;          /* 👈 Aspect ratio maintained, keeps it perfectly round */
+    display: block;             /* Breaks block alignment issues */
+}
+
+.profile-header-card h2 {
+    color: var(--text-main);
+    margin-bottom: 5px;
+    font-size: 1.5rem;
+}
+
+.profile-stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 20px 0;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 12px 0;
+}
+
+.stat-item {
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;            /* Makes it clear that numbers are clickable */
+    transition: color 0.2s ease;
+}
+
+.stat-item:hover {
+    color: var(--primary-teal);
+}
+
+.stat-item span {
+    color: var(--primary-teal);
+    font-size: 1.1rem;
+    display: block;
+}
+
+.profile-actions #follow-btn {
+    padding: 8px 24px;
+    font-size: 0.95rem;
+}
+
+.section-title {
+    color: var(--text-main);
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+/* =========================================================================
+   ◈ Slider Styles
+   ========================================================================= */
+.slider-container {
+    position: relative;
+    width: 100%;
+    background: #0d0d0d;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.slider-container video,
+.slider-container img {
+    display: block;
+    width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+}
+
+.slider-container button:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+    scale: 1.1;
+    transition: all 0.2s ease;
+}
+
+/* =========================================================================
+   ◈ Insta-style Floating Search Dropdown Container
+   ========================================================================= */
+#search-results-dropdown {
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 320px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    border: 1px solid #eaeaea;
+    z-index: 9999;
+    max-height: 400px;
+    overflow-y: auto;
+    display: none;
+    padding: 8px 0;
+}
+
+.search-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px;
+    transition: background 0.2s ease;
+    border-bottom: 1px solid #f9f9f9;
+}
+
+.search-item:hover {
+    background: #f8f9fa;
+}
+
+.search-user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+}
+
+.search-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #e1306c;
+}
+
+.search-username {
+    font-weight: 600;
+    color: #262626;
+    font-size: 0.9rem;
+}
+
+.btn-follow-toggle {
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.btn-follow {
+    background-color: #0095f6;
+    color: white;
+}
+
+.btn-follow:hover {
+    background-color: #1877f2;
+}
+
+.btn-unfollow {
+    background-color: #efefef;
+    color: #262626;
+}
+
+.btn-unfollow:hover {
+    background-color: #dbdbdb;
+}
+
+/* =========================================================================
+   👥 NEW ADDITION: FOLLOWERS / FOLLOWING MODAL POPUPS STYLES
+   ========================================================================= */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.modal-content {
+    background: var(--bg-card);
+    width: 100%;
+    max-width: 380px;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    animation: modalSlideUp 0.25s ease-out;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 12px;
+    margin-bottom: 15px;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 1.15rem;
+    color: var(--text-main);
+    font-weight: 700;
+}
+
+.close-modal-btn {
+    background: none;
+    border: none;
+    font-size: 1.6rem;
+    cursor: pointer;
+    color: var(--text-muted);
+    transition: color 0.2s;
+}
+
+.close-modal-btn:hover {
+    color: #FF5C5C;
+}
+
+.modal-body {
+    max-height: 280px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+/* User Items List inside Modal */
+.user-list-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.user-list-item:last-child {
+    border-bottom: none;
+}
+
+.modal-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--border-color);
+}
+
+.modal-username {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-main);
+    text-decoration: none;
+}
+
+.modal-username:hover {
+    text-decoration: underline;
+    color: var(--primary-teal);
+}
+
+@keyframes modalSlideUp {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}

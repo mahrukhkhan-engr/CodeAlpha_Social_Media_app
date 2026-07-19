@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome - CandySocial</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="auth-container">
+    <div class="card auth-card">
+      <div class="auth-header">
+        <h1 class="logo-text">🍬 Candy<span>Social</span></h1>
+        <p id="auth-subtitle">Connect with friends in our sweet community!</p>
+      </div>
+
+      <form id="login-form">
+        <input type="email" id="login-email" class="form-input" placeholder="Email Address" required>
+        <input type="password" id="login-password" class="form-input" placeholder="Password" required>
+        <button type="submit" class="btn-primary auth-btn">🔓 Login</button>
+        <p class="toggle-text">Don't have an account? <span id="to-signup">Create one</span></p>
+      </form>
+
+      <form id="signup-form" class="hidden">
+        <input type="text" id="signup-username" class="form-input" placeholder="Username" required>
+        <input type="email" id="signup-email" class="form-input" placeholder="Email Address" required>
+        <input type="password" id="signup-password" class="form-input" placeholder="Password" required>
+        <button type="submit" class="btn-primary auth-btn">✨ Sign Up</button>
+        <p class="toggle-text">Already have an account? <span id="to-login">Login here</span></p>
+      </form>
+
+      <div id="alert-box" class="alert hidden"></div>
+    </div>
+  </div>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>
