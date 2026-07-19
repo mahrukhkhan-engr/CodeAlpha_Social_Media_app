@@ -1,6 +1,6 @@
 // Backend API Base URLs
-const USERS_API_URL = 'http://localhost:5000/api/users';
-const POSTS_API_URL = 'http://localhost:5000/api/posts';
+const USERS_API_URL = 'https://candy-social-media-app.vercel.app/api/users';
+const POSTS_API_URL = 'https://candy-social-media-app.vercel.app/api/posts';
 
 // 🔐 SECURITY CHECK
 const token = localStorage.getItem('token');

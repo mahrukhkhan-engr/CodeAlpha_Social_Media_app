@@ -1,7 +1,7 @@
 // =========================================================================
 // 🌐 CONFIGURATION & INITIALIZATION
 // =========================================================================
-const BACKEND_URL = 'http://localhost:5000';
+const BACKEND_URL = 'https://candy-social-media-app.vercel.app';
 const socket = io(BACKEND_URL);
 
 const token = localStorage.getItem('token');

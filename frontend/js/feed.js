@@ -1,5 +1,5 @@
-const POSTS_API_URL = 'http://localhost:5000/api/posts';
-const USERS_API_URL = 'http://localhost:5000/api/users'; 
+const POSTS_API_URL = 'https://candy-social-media-app.vercel.app/api/posts';
+const USERS_API_URL = 'https://candy-social-media-app.vercel.app/api/users'; 
 const token = localStorage.getItem('token');
 const currentUserRaw = localStorage.getItem('user');
 let currentUser = null;

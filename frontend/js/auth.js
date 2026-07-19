@@ -1,5 +1,5 @@
 // Backend API Base URL (Tumhara local node server port)
-const API_URL = 'http://localhost:5000/api/auth';
+const API_URL = 'https://candy-social-media-app.vercel.app/api/auth';
 
 // DOM Elements Selection
 const loginForm = document.getElementById('login-form');
